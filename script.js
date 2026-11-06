@@ -1,5 +1,6 @@
 const nav = document.querySelector('.nav');
 nav?.insertAdjacentHTML('beforeend', '<a href="journey.html">Journey</a><a href="resume.html">Resume</a>');
+document.querySelectorAll('.nav a[href="contact.html"]').forEach(link => link.remove());
 const page = location.pathname.split('/').filter(Boolean).pop() || 'index';
 const current = page.endsWith('.html') ? page : `${page}.html`;
 document.querySelectorAll('.nav a').forEach(a => { if(a.getAttribute('href') === current) a.setAttribute('aria-current', 'page'); });
