@@ -121,10 +121,16 @@ a:focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; }
 .contact-grid span { display: block; margin-bottom: 17px; font: 10px var(--mono); text-transform: uppercase; color: var(--orange); }
 .contact-grid a, .contact-grid p { display: block; margin: 9px 0; color: var(--muted); font-size: 13px; }
 .contact-grid a:hover { color: var(--ink); }
+.site-footer { border-top: 1px solid var(--line); margin-top: 80px; }
+.site-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 82px; color: var(--muted); font-size: 12px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 22px; }
+.site-footer a:hover { color: var(--orange); }
 @media (max-width: 760px) {
   .page-hero, .contact-page { padding-top: 80px; padding-bottom: 80px; min-height: auto; }
   .split-callout, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
   .preview-row { grid-template-columns: 35px 1fr 20px; gap: 10px; }
   .preview-row h3 { font-size: 17px; }
   .compact-contact { padding-top: 100px; }
+  .site-footer { margin-top: 50px; }
+  .site-footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 12px; min-height: 110px; }
 }
