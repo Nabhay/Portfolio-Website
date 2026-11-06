@@ -134,3 +134,40 @@ a:focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; }
   .site-footer { margin-top: 50px; }
   .site-footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 12px; min-height: 110px; }
 }
+
+/* Phone layout: keep the brand and contact action visible above the page links. */
+@media (max-width: 600px) {
+  .shell, .site-header { width: calc(100% - 36px); }
+  .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 10px; padding: 18px 0 12px; }
+  .brand-label { display: inline; font-size: 13px; }
+  .header-cta { display: inline-flex; align-items: center; white-space: nowrap; font-size: 12px; }
+  .header-cta span { margin-left: 4px; }
+  .nav { grid-column: 1 / -1; display: flex; gap: 0; justify-content: space-between; flex-wrap: nowrap; margin: 0; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { flex: 0 0 auto; padding: 8px 8px 12px; font-size: 12px; }
+  .nav a:first-child { padding-left: 0; }
+  .nav a:last-child { padding-right: 0; }
+  h1 { font-size: clamp(42px, 12vw, 66px); overflow-wrap: anywhere; }
+  h2 { font-size: clamp(36px, 10vw, 54px); overflow-wrap: anywhere; }
+  .hero { padding: 70px 0 80px; }
+  .hero-actions { flex-wrap: wrap; gap: 18px; }
+  .section { padding: 80px 0; }
+  .page-hero, .contact-page { padding: 70px 0; }
+  .compact-contact h2 { font-size: clamp(42px, 12vw, 66px); }
+  .contact-page .contact-email { font-size: clamp(16px, 5vw, 22px); overflow-wrap: anywhere; }
+  .contact-grid { gap: 28px; }
+  .honors { grid-template-columns: 1fr; gap: 8px; }
+  .skill-columns { gap: 28px 16px; }
+  .milestone { gap: 22px; padding-bottom: 65px; }
+  .event-photo { min-height: 210px; padding: 22px; }
+  .resume-page { padding-block: 70px; }
+  .resume-document { height: 70vh; min-height: 420px; }
+  .site-footer nav { gap: 16px; }
+}
+@media (max-width: 360px) {
+  .shell, .site-header { width: calc(100% - 28px); }
+  .brand-label { font-size: 12px; }
+  .nav a { font-size: 11px; padding-inline: 5px; }
+  .skill-columns { grid-template-columns: 1fr; }
+  .preview-row { grid-template-columns: 25px minmax(0, 1fr) 18px; }
+}
