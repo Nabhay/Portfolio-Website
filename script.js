@@ -35,10 +35,10 @@ const current = page.endsWith('.html') ? page : `${page}.html`;
 document.querySelectorAll('.nav a').forEach(a => { if(a.getAttribute('href') === current) a.setAttribute('aria-current', 'page'); });
 document.querySelectorAll('.project-card').forEach((card, i) => {
  const url = ['https://github.com/nabhay/myeye','https://github.com/nabhay/LoadBalancer'][i];
- card.querySelector('.project-body').insertAdjacentHTML('beforeend', `<a class="inline-link" href="${url}" target="_blank" rel="noopener noreferrer">View source on GitHub</a>`);
+ const liveLink = i === 1 ? '<a class="inline-link" href="https://loadbalancer.khanna.app" target="_blank" rel="noopener noreferrer">Visit live site</a>' : '';
+ card.querySelector('.project-body').insertAdjacentHTML('beforeend', `<div class="project-links"><a class="inline-link" href="${url}" target="_blank" rel="noopener noreferrer">View source on GitHub</a>${liveLink}</div>`);
 });
 document.querySelector('.preview-row:nth-child(3)')?.setAttribute('href', 'https://loadbalancer.khanna.app');
-document.querySelector('.project-card:nth-child(2) .project-body')?.insertAdjacentHTML('beforeend', '<a class="inline-link" href="https://loadbalancer.khanna.app" target="_blank" rel="noopener noreferrer">Visit live site</a>');
 document.querySelector('.home-about .inline-link')?.setAttribute('href', 'journey.html');
 
 document.body.insertAdjacentHTML('beforeend', `
